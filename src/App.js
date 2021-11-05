@@ -19,6 +19,12 @@ class App extends Component {
     this.setState(newState);
   }
 
+  deleteNote(index) {
+    let notesArray = this.state.notes;
+    notesArray.splice(index, 1);
+    this.setState(notesArray);
+  }
+
   render() {
     return (
       <section className="content">
@@ -27,6 +33,7 @@ class App extends Component {
         />
         <NoteList
           notes={this.state.notes}
+          deleteNote={this.deleteNote.bind(this)}
         />
       </section>
     );

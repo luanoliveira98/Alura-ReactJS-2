@@ -10,8 +10,10 @@ class NoteList extends Component {
                     return (
                         <li className="note-list_item" key={index}>
                             <CardNote
-                                title={note.title}
-                                text={note.text}
+                                index = {index}
+                                title = {note.title}
+                                text = {note.text}
+                                deleteNote = {this.props.deleteNote}
                             />
                         </li>
                     );
