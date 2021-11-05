@@ -14,3 +14,12 @@
 - Passing functions as properties to other components
 - Review **State** and **bind**
 - What is the SVGR tool and what it is for
+
+### Creating categories list
+
+
+- What is the **Fragment** component
+- What is the difference between *stateless* and *stateful components*
+- How to decide where to put information
+- How JS *Spread Operator* works
+- Passing functions by property and managing state
