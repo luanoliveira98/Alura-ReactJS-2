@@ -1,20 +1,25 @@
 export default class Categories {
     constructor() {
         this.categories = [];
-        this._registers = [];
+        this._subscribers = [];
     }
 
-    register(func) {
-        this._registers.push(func);
+    subscribe(func) {
+        this._subscribers.push(func);
+    }
+
+    unsubscribe(func) {
+        this._registers = this._registers.filter(f => f !== func);
     }
 
     notify() {
-        this._registers.forEach(func => {
+        this._subscribers.forEach(func => {
             func(this.categories);
         })
     }
 
     create(data) {
         this.categories.push(data);
+        this.notify();
     }
 }

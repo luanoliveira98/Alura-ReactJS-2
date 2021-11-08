@@ -39,3 +39,10 @@
 - Separating data from rendering
 - Observable design pattern
 - Advantages of dependency injection
+
+### Objects lifecycle
+
+- How the components lifecycle works
+- Lifecycle methods like **ComponentDidMount** and **ComponentWillUnmount**
+- Adding local state to components and taking from a parent component
+- **Bind** details and functions references

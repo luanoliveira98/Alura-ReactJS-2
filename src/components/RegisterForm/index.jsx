@@ -7,6 +7,24 @@ class RegisterForm extends Component {
         this.title = "Title";
         this.text = "Text";
         this.category = "Without Category";
+
+        this.state = {
+            categories: []
+        };
+
+        this._newCategories = this._newCategories.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.categories.subscribe(this._newCategories);
+    }
+
+    componentWillUnmount() {
+        this.props.categories.unsubscribe(this._newCategories);
+    }
+
+    _newCategories(categories) {
+        this.setState({...this.state, categories});
     }
 
     _handlerTitleChange(event) {
@@ -35,7 +53,7 @@ class RegisterForm extends Component {
             <form className="register-form" onSubmit={this._createNote.bind(this)}>
                 <select className="register-form_input" onChange={this._handlerCategoryChange.bind(this)}>
                     <option value="Without Category">Without Category</option>
-                    {this.props.categories.map((category, index) => {
+                    {this.state.categories.map((category, index) => {
                         return <option key={index} value={category}>{category}</option>
                     })}
                 </select>

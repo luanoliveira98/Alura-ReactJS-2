@@ -4,8 +4,12 @@ export default class Notes {
         this._registers = [];
     }
 
-    register(func) {
+    subscribe(func) {
         this._registers.push(func);
+    }
+
+    unsubscribe(func) {
+        this._registers = this._registers.filter(f => f !== func);
     }
 
     notify() {
@@ -15,12 +19,14 @@ export default class Notes {
     }
 
     create(title, text, category) {
-        const note = new Note(title, text, category);
-        this.notes.push(note);
+        const data = new Note(title, text, category);
+        this.notes.push(data);
+        this.notify();
     }
 
     delete(index) {
         this.notes.splice(index, 1);
+        this.notify();
     }
 }
 
