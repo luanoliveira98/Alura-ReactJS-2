@@ -23,3 +23,11 @@
 - How to decide where to put information
 - How JS *Spread Operator* works
 - Passing functions by property and managing state
+
+### Following patterns
+
+- How to add *options* to the form dynamically
+- We made a reflection on the project design
+- We changed the representation of a category
+- Separating data and visualization and what are the advantages of this approach
+- Problems with project rendering and optimization

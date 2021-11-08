@@ -14,8 +14,8 @@ class App extends Component {
     };
   }
 
-  createNote(title, text) {
-    const newNote = {title,text};
+  createNote(title, text, category) {
+    const newNote = {title,text, category};
     const newNotesArray = [...this.state.notes, newNote];
     const newState = {
       notes: newNotesArray,
@@ -42,6 +42,7 @@ class App extends Component {
     return (
       <section className="content">
         <RegisterForm
+          categories={this.state.categories}
           createNote={this.createNote.bind(this)}
         />
         <main className="main-content">
