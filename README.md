@@ -31,3 +31,11 @@
 - We changed the representation of a category
 - Separating data and visualization and what are the advantages of this approach
 - Problems with project rendering and optimization
+
+### Observable
+
+- Why it's good to take **state** references on components that are much higher in the hierarchy
+- Why do we need a data source
+- Separating data from rendering
+- Observable design pattern
+- Advantages of dependency injection
